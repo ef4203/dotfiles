@@ -1,45 +1,70 @@
-" I mostly copied this vimrc.
+" Hi, This is my .vimrc file
 
+" This is needed for Vundle
 set nocompatible
 filetype off
 
+" Load Vundle, the vim pluging manager
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Enable Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+" File browser
+Plugin 'scrooloose/nerdtree'
+
+" Better status line
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" Auto indentation for python
+Plugin 'vim-scripts/indentpython.vim'
+
+" Autp-complete, but you have to install each language induvidually see: 
+" http://github.com/Valloric/YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+
+" Automatically closes brackets
+Plugin 'jiangmiao/auto-pairs'
+
+" Visual Studio-like colorscheme
+Plugin 'tomasiser/vim-code-dark'
+
+call vundle#end()
+
+" Auto indent
 filetype plugin indent on
 
+" Enable syntax highlighting
 syntax on
 
-" Ignore various cache/vendor folders
-set wildignore+=*/node_modules/*,*/dist/*,*/__pycache__/*
+" Ignore cache/vendor folders
+set wildignore+=*/node_modules/*,*/dist/*,*/__pycache__/*,*/vendor/*
 
 " Ignore C/C++ Object files
 set wildignore+=*.o
 
-" Ignore generated C/C++ Qt files
+" Ignore C/C++ QT files
 set wildignore+=moc_*.cpp,moc_*.h
 
-" Ignore generated C/C++ Qt files
-set wildignore+=moc_*.cpp,moc_*.h
-
-" Ignore Unity asset meta-files
+" Igore Unity asset meta-files
 set wildignore+=*/Assets/*.meta
 
-" Disable swap file.
+" Disable swap file
 set noswapfile
 
 " Enable line numbers
 set number
 
-" Don't wrap lines
+" Disable line wrapping
 set nowrap
 
-" Let backspace delete indentations, newlines, and don't make it stop after
-" reaching the start of your insert mode
+" Make backspace behaive like in other editors
 set backspace=indent,eol,start
 
 " Other options 
 set incsearch
 set showmode
-set nocompatible
-filetype on
 set wildmenu
 set ruler
 set lz
@@ -55,24 +80,21 @@ set ai
 set si
 set cin
 set mouse=a
-set cursorline
 set numberwidth=6
 set encoding=utf-8
 
 " Enable relative line numbering
 set rnu
 
-" Customize our status line
-set statusline=%f%m%r%h%w\ 
-set statusline+=[%{&ff}]
-set statusline+=%=
-set statusline+=[\%03.3b/\%02.2B]\ [POS=%04v]
-
+" This is important for the powerline plugin
 set laststatus=2
 
-" Make a slight customization with the cursorline to the ron theme
+" Set the color scheme
+colorscheme codedark
+
+" Make a slight customization with the cursorline
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
+hi CursorLine term=bold cterm=bold ctermbg=darkgrey
 
 " Store an undo buffer in a file in $HOME/.vimundo
 set undofile
@@ -80,63 +102,18 @@ set undodir=$HOME/.vimundo
 set undolevels=1000
 set undoreload=10000
 
-" Use ; as :
-" Very convenient as you don't have to press shift to run commands
-nnoremap ; :
+" Bind NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
-" Unbind Q (it used to take you into Ex mode)
-nnoremap Q <nop>
+" Bind ; as : as it's more convienent
+noremap ; :
 
-" Unbind F1 (it used to show you a help menu)
-nnoremap <F1> <nop>
+" Unbind Ex mode
+noremap Q <nop>
 
-" Unbind Shift+K, it's previously used for opening manual or help or something
-map <S-k> <Nop>
+" Unbind help menu
+noremap <F1> <nop>
 
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" Unbind another help menu
+noremap <S-k> <nop>
 
-nnoremap <silent> <F5> :lnext<CR>
-nnoremap <silent> <F6> :lprev<CR>
-nnoremap <silent> <C-Space> :ll<CR>
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_enable_cpp_checker = 0
-let g:syntastic_cpp_checkers=['']
-
-let mapleader = "\<Space>"
-let g:go_fmt_command = "goimports"
-
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-
-au FileType cpp nmap <leader>f <Plug>(operator-clang-format)
-au FileType cpp nmap <leader>h :call CurtineIncSw()<CR>
-
-au FileType javascript setlocal ts=2 sw=2 sts=2
-au FileType html setlocal ts=2 sw=2 sts=2
-
-nnoremap <silent> <C-B> :CtrlPBuffer<CR>
-nnoremap <silent> <C-K> :CtrlPMixed<CR>
-
-" clang-format extension options
-autocmd FileType c ClangFormatAutoEnable
-autocmd FileType cpp ClangFormatAutoEnable
-autocmd FileType javascript ClangFormatAutoDisable
-
-" clang_complete
-let g:clang_library_path='/usr/local/lib/libclang.so'
-let g:clang_auto_select=1
-let g:clang_close_preview=1
-
-" auto-pairs
-" let g:AutoPairsMapCR = 0
-" imap <silent><CR> <CR><Plug>AutoPairsReturn
-
-" Complete
-let g:ycm_python_binary_path = '/usr/bin/python3'
-let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
