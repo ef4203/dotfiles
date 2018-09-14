@@ -11,9 +11,6 @@ call vundle#begin()
 " Enable Vundle
 Plugin 'VundleVim/Vundle.vim'
 
-" File browser
-Plugin 'scrooloose/nerdtree'
-
 " Better status line
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -26,9 +23,6 @@ Plugin 'Valloric/YouCompleteMe'
 
 " Automatically closes brackets
 Plugin 'jiangmiao/auto-pairs'
-
-" Visual Studio-like colorscheme
-Plugin 'tomasiser/vim-code-dark'
 
 call vundle#end()
 
@@ -90,7 +84,7 @@ set rnu
 set laststatus=2
 
 " Set the color scheme
-colorscheme codedark
+colorscheme slate
 
 " Make a slight customization with the cursorline
 set cursorline
@@ -101,9 +95,6 @@ set undofile
 set undodir=$HOME/.vimundo
 set undolevels=1000
 set undoreload=10000
-
-" Bind NERDTree
-map <C-n> :NERDTreeToggle<CR>
 
 " Bind ; as : as it's more convienent
 noremap ; :
@@ -117,3 +108,16 @@ noremap <F1> <nop>
 " Unbind another help menu
 noremap <S-k> <nop>
 
+" Bind move single line to alt arrow keys
+noremap <A-Up> ddkkp
+noremap <A-Down> ddp
+
+" PHP/HTML/Twig Shortcuts
+autocmd FileType php,html,twig inoremap p<Tab> <p></p><Esc>3hi
+autocmd FileType php,html,twig inoremap a<Tab> <a<space>href=""></a><Esc>5hi
+autocmd FileType php,html,twig inoremap d<Tab> <div></div><Esc>5hi
+autocmd FileType php,html,twig inoremap h1<Tab> <h1></h1><Esc>4hi
+autocmd FileType php,html,twig inoremap h2<Tab> <h2></h2><Esc>4hi
+autocmd FileType php,html,twig inoremap h3<Tab> <h3></h3><Esc>4hi
+autocmd FileType php,html,twig inoremap h4<Tab> <h4></h4><Esc>4hi
+autocmd FileType php,html,twig inoremap h5<Tab> <h5></h5><Esc>4hi
