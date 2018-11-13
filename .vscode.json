@@ -1,0 +1,12 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "explorer.openEditors.visible": 0,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "files.insertFinalNewline": true,
+  "git.enableSmartCommit": true,
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true
+}
