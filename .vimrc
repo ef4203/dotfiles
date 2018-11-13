@@ -1,4 +1,4 @@
-" Hi, This is my .vimrc file
+" ~/.vimrc
 
 " This is needed for Vundle
 set nocompatible
@@ -19,7 +19,7 @@ Plugin 'vim-scripts/indentpython.vim'
 
 " Autp-complete, but you have to install each language induvidually see: 
 " http://github.com/Valloric/YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Automatically closes brackets
 Plugin 'jiangmiao/auto-pairs'
@@ -84,11 +84,11 @@ set rnu
 set laststatus=2
 
 " Set the color scheme
-colorscheme slate
+colorscheme codedark
 
 " Make a slight customization with the cursorline
 set cursorline
-hi CursorLine term=bold cterm=bold ctermbg=darkgrey
+" hi CursorLine term=bold cterm=bold ctermbg=darkgrey
 
 " Store an undo buffer in a file in $HOME/.vimundo
 set undofile
@@ -112,12 +112,17 @@ noremap <S-k> <nop>
 noremap <A-Up> ddkkp
 noremap <A-Down> ddp
 
-" PHP/HTML/Twig Shortcuts
-autocmd FileType php,html,twig inoremap p<Tab> <p></p><Esc>3hi
-autocmd FileType php,html,twig inoremap a<Tab> <a<space>href=""></a><Esc>5hi
-autocmd FileType php,html,twig inoremap d<Tab> <div></div><Esc>5hi
-autocmd FileType php,html,twig inoremap h1<Tab> <h1></h1><Esc>4hi
-autocmd FileType php,html,twig inoremap h2<Tab> <h2></h2><Esc>4hi
-autocmd FileType php,html,twig inoremap h3<Tab> <h3></h3><Esc>4hi
-autocmd FileType php,html,twig inoremap h4<Tab> <h4></h4><Esc>4hi
-autocmd FileType php,html,twig inoremap h5<Tab> <h5></h5><Esc>4hi
+" Easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Disable arrow keys be faster
+noremap <Left> <nop>
+noremap <Right> <nop>
+noremap <Up> <nop>
+noremap <Down> <nop>
+
+" Map F6 to spellchecking
+map <F6> :setlocal spell! spelllang=en_us<CR>

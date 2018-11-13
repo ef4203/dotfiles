@@ -4,7 +4,7 @@
 set $mod Mod4
 
 # Font for window titles (will also be used by the bar)
-font pango:Monospace Regular 10
+font pango:Monospace Regular 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -157,7 +157,13 @@ bindsym Shift+Print exec "scrot -z '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection c
 exec_always feh --bg-fill ~/.config/wall.png 
 
 # Start transparancy manager
+# (If you play video games, disable this!!
+# But you will also loose transparent terminals)
 exec compton -f 
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 
 
 ########################
 #     Desktop only
@@ -169,13 +175,8 @@ exec xrandr --output DisplayPort-0 --right-of HDMI-A-0 --auto
 # Set mouse speed
 exec xinput set-prop 9 "libinput Accel Speed" -0.95
 
-# Enable volume/mute keys
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 
-
 ########################
 #    Thinkpad only
 ########################
-#
+exec --no-startup-id nm-applet
 ########################
