@@ -84,11 +84,11 @@ set rnu
 set laststatus=2
 
 " Set the color scheme
-colorscheme codedark
+colorscheme slate
 
 " Make a slight customization with the cursorline
 set cursorline
-" hi CursorLine term=bold cterm=bold ctermbg=darkgrey
+hi CursorLine term=bold cterm=bold ctermbg=darkgrey
 
 " Store an undo buffer in a file in $HOME/.vimundo
 set undofile
