@@ -5,26 +5,26 @@ set nocompatible
 filetype off
 
 " Load Vundle, the vim pluging manager
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
 
 " Enable Vundle
-Plugin 'VundleVim/Vundle.vim'
+" Plugin 'VundleVim/Vundle.vim'
 
 " Better status line
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Auto indentation for python
-Plugin 'vim-scripts/indentpython.vim'
+" Plugin 'vim-scripts/indentpython.vim'
 
 " Autp-complete, but you have to install each language induvidually see: 
 " http://github.com/Valloric/YouCompleteMe
 " Plugin 'Valloric/YouCompleteMe'
 
 " Automatically closes brackets
-Plugin 'jiangmiao/auto-pairs'
+" Plugin 'jiangmiao/auto-pairs'
 
-call vundle#end()
+" call vundle#end()
 
 " Auto indent
 filetype plugin indent on
@@ -119,10 +119,10 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Disable arrow keys be faster
-noremap <Left> <nop>
-noremap <Right> <nop>
-noremap <Up> <nop>
-noremap <Down> <nop>
+" noremap <Left> <nop>
+" noremap <Right> <nop>
+" noremap <Up> <nop>
+" noremap <Down> <nop>
 
 " Map F6 to spellchecking
 map <F6> :setlocal spell! spelllang=en_us<CR>
