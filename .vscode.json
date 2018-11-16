@@ -3,6 +3,7 @@
   "explorer.openEditors.visible": 0,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "editor.dragAndDrop": false,
   "editor.minimap.enabled": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
