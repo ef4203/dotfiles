@@ -15,8 +15,8 @@ bindsym $mod+Return exec urxvt
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Start rofi (a program launcher)
-bindsym $mod+d exec sh ~/.scripts/rofi-macro.sh 
+# Start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id dmenu_run
 
 # Change focus
 bindsym $mod+j focus left
@@ -141,7 +141,9 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar
 bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        i3bar_command i3bar
+        status_command i3status
+        position bottom
 }
 
 # i3-gaps config
@@ -149,34 +151,19 @@ for_window [class="^.*"] border pixel 0
 gaps inner 10
 gaps outer 5
 
-# Bind screenshot utility 
+# Bind screenshot utility
 bindsym Print exec "scrot -u -z '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 bindsym Shift+Print exec "scrot -z '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 
-# Set Wallpaper
-exec_always feh --bg-fill ~/.config/wall.png 
-
-# Start transparancy manager
-# (If you play video games, disable this!!
-# But you will also loose transparent terminals)
-exec compton -f 
-
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 ########################
-#     Desktop only
+#    AUTO START
 ########################
-
-# Fix Monitor Order
-exec xrandr --output DisplayPort-0 --right-of HDMI-A-0 --auto
-
-# Set mouse speed
-exec xinput set-prop 9 "libinput Accel Speed" -0.95
-
-########################
-#    Thinkpad only
-########################
+exec --no-startup-id compton -f
 exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
+exec_always --no-startup-id feh --bg-fill ~/.config/wall.png
 ########################
