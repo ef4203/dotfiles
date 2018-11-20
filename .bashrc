@@ -18,6 +18,9 @@ alias ls='ls --color=auto'
 # Colorize grep
 alias grep='grep --color=auto'
 
+# More colors
+use_color=true
+
 # Colorize bash prompt
 PS1="\e[1;35mTea \e[0;32m[\w]$\e[0m "
 
@@ -29,6 +32,11 @@ case "MING" in "$uname"*)
     # Use open to open a direcotry in the file explorer
     alias open='explorer.exe'
 esac
+
+alias cp="cp -i"        # Confirm overwrite
+alias df="df -h"        # Humand reabable
+alias free="free -m"    # Size in MB
+alias more=less       # If we want to see _more_ we use less
 
 # Typo prevention
 alias sl="ls"
