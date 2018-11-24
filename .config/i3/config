@@ -9,8 +9,8 @@ font pango:Monospace Regular 12
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Start a terminal (in my case urxvt)
-bindsym $mod+Return exec urxvt
+# Start a TERMINALinal (in my case urxvt)
+bindsym $mod+Return exec $TERMINAL
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -52,9 +52,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -106,11 +106,11 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+#bindsym $mod+Shift+r restart
 # Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Resize window (you can also use the mouse for that)
 mode "resize" {
@@ -137,33 +137,81 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+e mode "resize"
+
+# Set Xresources colors:
+set_from_resource $darkblack	color0  #000000
+set_from_resource $black	color8  #000000
+set_from_resource $darkred	color1  #000000
+set_from_resource $red		color9  #000000
+set_from_resource $darkgreen	color2  #000000
+set_from_resource $green	color10 #000000
+set_from_resource $darkyellow	color3  #000000
+set_from_resource $yellow	color11 #000000
+set_from_resource $darkblue	color4  #000000
+set_from_resource $blue		color12 #000000
+set_from_resource $darkmagenta	color5  #000000
+set_from_resource $magenta	color13 #000000
+set_from_resource $darkcyan	color6  #000000
+set_from_resource $cyan		color14 #000000
+set_from_resource $darkwhite	color7  #000000
+set_from_resource $white	color15 #000000
+set $transparent		#00000000
+
+#                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
+client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
+client.unfocused	$transparent	$blue		$white		$darkblue		$darkblack
+client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
+client.urgent		$darkred	$darkred	$black		$darkred		$darkred
+client.background $black
 
 # Start i3bar to display a workspace bar
 bar {
         i3bar_command i3bar
         status_command i3status
         position bottom
+
+        colors {
+                background $darkblack
+                statusline $darkwhite
+                separator $cyan
+                focused_workspace  $blue $darkblue $darkblack
+                active_workspace   $blue $blue $darkwhite
+                inactive_workspace $darkblack $darkblack $white
+                urgent_workspace   $darkblack $darkblack $white
+        }
 }
+
+# Custom bindings
+bindsym $mod+p exec --no-startup-id sh ~/.scripts/displayselect.sh
+bindsym $mod+c exec --no-startup-id sh ~/.scripts/camtoggle.sh
+bindsym $mod+r exec $TERMINAL -e ranger
+bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+F5 restart
+
+# Bind screenshot utility
+bindsym Print exec "scrot -u -z '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
+bindsym Shift+Print exec "scrot -z '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
+
+# Bind System keys
+bindsym XF86PowerOff exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
+bindsym XF86Explorer exec $TERMINAL -e ranger
+bindsym XF86WWW exec --no-startup-id $BROWSER
+bindsym XF86MyComputer exec $TERMINAL -e ranger
+bindsym XF86HomePage exec $BROWSER
 
 # i3-gaps config
 for_window [class="^.*"] border pixel 0
 gaps inner 10
 gaps outer 5
 
-# Bind screenshot utility
-bindsym Print exec "scrot -u -z '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
-bindsym Shift+Print exec "scrot -z '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
-
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-
 ########################
 #    AUTO START
 ########################
-exec --no-startup-id compton -f
+exec --no-startup-id xcompmgr
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
+exec --no-startup-id dunst
 exec_always --no-startup-id feh --bg-fill ~/.config/wall.png
+exec_always --no-startup-id wal -i ~/.config/wall.png -a 80 >/dev/null
 ########################
