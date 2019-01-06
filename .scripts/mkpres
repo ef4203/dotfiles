@@ -1,0 +1,9 @@
+#!/bin/bash
+
+pandoc -s -t beamer \
+    --csl=${HOME}/Documents/.common/cs-style.csl \
+    --filter pandoc-citeproc \
+    --bibliography=${HOME}/Documents/.common/bib.bib \
+    -o ${1//.md}.pdf ${1}    
+
+echo "Generated ${1//.md}.pdf"
