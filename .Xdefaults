@@ -40,6 +40,7 @@
 ! white
 *color15: #e6e6e6
 
+! urxvt settings
 URxvt.intensityStyles:  false
 URxvt.background:       [100]#1e1e1e
 URxvt.foreground:       #d9e6f2
@@ -47,3 +48,5 @@ URxvt.depth:            32
 URxvt.font:             xft:monospace:size=12
 URxvt.scrollBar:        false
 URxvt.cursorColor:      white
+URxvt.iso14755:         false
+URxvt.iso14755_52:      false
