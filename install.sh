@@ -13,6 +13,7 @@ make_home_symlink() {
 # Dotfiles in home directory
 dotfiles=(
     .bash_profile
+    .bash_logout
     .bashrc
     .vimrc
     .Xdefaults

@@ -13,3 +13,4 @@ export READER="zathura"
 if [ "$(tty)" = "/dev/tty1" ]; then
 	# pgrep -x cinnamon || exec startx
 fi
+
