@@ -9,7 +9,7 @@ export EDITOR="vim"
 export BROWSER="firefox"
 export READER="zathura"
 
-# Start graphical server on login
+# Login Scripts
 if [ "$(tty)" = "/dev/tty1" ]; then
-	pgrep -x cinnamon || exec startx
+	# pgrep -x cinnamon || exec startx
 fi
