@@ -12,11 +12,11 @@ make_home_symlink() {
 
 # Dotfiles in home directory
 dotfiles=(
-.bash_profile
-.bashrc
-.vimrc
-.Xdefaults
-.xinitrc
+    .bash_profile
+    .bashrc
+    .vimrc
+    .Xdefaults
+    .xinitrc
 )
 
 # Copy all dotfiles
@@ -30,13 +30,3 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
-if [ -d ~/.config/zathura ]; then
-    echo "Zathura install detected, installing config..."
-    make_home_symlink .config/zathura/zathurarc ~/.config/zathura/zathurarc
-fi
-
-if [ -d ~/.config/ranger ]; then
-    echo "Ranger install detected, installing config..."
-    make_home_symlink .config/ranger/rc.conf ~/.config/ranger/rc.conf
-    cp .config/ranger/scope.sh ~/.config/ranger/scope.sh
-fi
