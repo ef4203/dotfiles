@@ -11,6 +11,6 @@ export READER="zathura"
 
 # Login Scripts
 if [ "$(tty)" = "/dev/tty1" ]; then
-	# pgrep -x cinnamon || exec startx
+    xinput set-prop 12 "libinput Accel Speed" -0.95
 fi
 
