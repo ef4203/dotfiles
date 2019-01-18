@@ -11,6 +11,6 @@ export READER="zathura"
 
 # Login Scripts
 if [ "$(tty)" = "/dev/tty1" ]; then
-    xinput set-prop 12 "libinput Accel Speed" -0.95
+    #xinput set-prop 12 "libinput Accel Speed" -0.95
 fi
 
