@@ -35,6 +35,8 @@ fi
 # Additional dotfiles
 printf "Installing i3 config...\n"
 ln -s `pwd`/.config/i3/config ~/.config/i3/config
+printf "Installing i3status config...\n"
+ln -s `pwd`/.config/i3status/config ~/.config/i3status/config
 printf "Installing ranger config...\n"
 ln -s `pwd`/.config/ranger/rc.conf ~/.config/ranger/rc.conf
 printf "Installing mpv config...\n"
