@@ -39,6 +39,7 @@ printf "Installing i3status config...\n"
 ln -s `pwd`/.config/i3status/config ~/.config/i3status/config
 printf "Installing ranger config...\n"
 ln -s `pwd`/.config/ranger/rc.conf ~/.config/ranger/rc.conf
+cp .config/ranger/scope.sh ~/.config/ranger/scope.sh
 printf "Installing mpv config...\n"
 ln -s `pwd`/.config/mpv/input.conf ~/.config/mpv/input.conf
 printf "Installing zathura config...\n"
