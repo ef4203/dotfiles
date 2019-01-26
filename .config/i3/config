@@ -10,13 +10,12 @@ font pango:Monospace Regular 14
 floating_modifier $mod
 
 # Start a TERMINALinal (in my case urxvt)
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec $TERMINAL
 
 # Kill focused window
 bindsym $mod+Shift+q kill
 
 # Start dmenu (a program launcher)
-#bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop -nf #ffffff -nb #1e1e1e"
 bindsym $mod+d exec --no-startup-id "dmenu_run -b -fn 'monospace:pixelsize=21' -nf '#FFF' -nb '#1E1E1E' -sb '#FFFFFF' -sf '#1E1E1E'"
 bindsym $mod+Shift+d exec --no-startup-id ~/.scripts/morc_menu
 
@@ -102,15 +101,10 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # Resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # Same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -121,34 +115,21 @@ mode "resize" {
         # Back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym $mod+e mode "default"
 }
 
 bindsym $mod+e mode "resize"
 
-# Set Xresources colors:
-set_from_resource $darkblack	color0  #000000
-set_from_resource $black	color8  #000000
-set_from_resource $darkred	color1  #000000
-set_from_resource $red		color9  #000000
-set_from_resource $darkgreen	color2  #000000
-set_from_resource $green	color10 #000000
-set_from_resource $darkyellow	color3  #000000
-set_from_resource $yellow	color11 #000000
-set_from_resource $darkblue	color4  #000000
-set_from_resource $blue		color12 #000000
-set_from_resource $darkmagenta	color5  #000000
-set_from_resource $magenta	color13 #000000
-set_from_resource $darkcyan	color6  #000000
-set_from_resource $cyan		color14 #000000
-set_from_resource $darkwhite	color7  #000000
-set_from_resource $white	color15 #000000
-set $transparent		#00000000
+# Colors
+set $dark   #1e1e1e
+set $light  #ffffff
+set $high   #bbbbff
+set $urgent #ff0000
 
-client.focused #ffffff #1e1e1e #ffffff #ffffff #bbbbff
-client.unfocused #ffffff #1e1e1e #ffffff #ffffff #ffffff
-client.urgent #ffffff #1e1e1e #ffffff #ffffff #ffffff
-client.focused_inactive #ffffff #1e1e1e #ffffff #ffffff #ffffff
+client.focused          $light $dark $light $light $high
+client.unfocused        $light $dark $light $light $light
+client.urgent           $light $dark $light $light $light
+client.focused_inactive $light $dark $light $light $light
 
 # Start i3bar to display a workspace bar
 bar {
@@ -157,19 +138,19 @@ bar {
         position bottom
 
         colors {
-            background #1e1e1e
-            statusline #ffffff
-            focused_workspace #1e1e1e #ffffff #1e1e1e
-            active_workspace #1e1e1e #ffffff #1e1e1e
-            inactive_workspace #1e1e1e #1e1e1e #ffffff
-            urgent_workspace #ff0000 #1e1e1e #ffffff
+            background $dark
+            statusline $light
+            focused_workspace  $dark   $light $dark
+            active_workspace   $dark   $light $dark
+            inactive_workspace $dark   $dark  $light
+            urgent_workspace   $urgent $dark  $light
         }
 }
 
 # Custom bindings
 bindsym $mod+c exec --no-startup-id sh ~/.scripts/camtoggle.sh
-bindsym $mod+Shift+c exec --no-startup-id urxvt -e vim $HOME/$(printf ".config/i3/config\n.vimrc\n.bashrc" | dmenu)
-bindsym $mod+r exec urxvt -e ranger
+bindsym $mod+Shift+c exec --no-startup-id $TERMINAL -e vim $HOME/$(printf ".config/i3/config\n.vimrc\n.bashrc" | dmenu -b -fn 'monospace:pixelsize=21' -nf '#FFF' -nb '#1E1E1E' -sb '#FFFFFF' -sf '#1E1E1E')
+bindsym $mod+r exec $TERMINAL -e ranger
 bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+F5 restart
 
@@ -192,9 +173,17 @@ bindsym $mod+Shift+g gaps inner current minus 5
 ########################
 #    AUTO START
 ########################
+# Composition manager
 exec --no-startup-id xcompmgr
+# Networkmanager
 exec --no-startup-id nm-applet
+# Volumeslider
 exec --no-startup-id volumeicon
+# Notification service
 exec --no-startup-id dunst
+# Fully disable caps locks for entire system
+exec --no-startup-id setxkbmap -option ctrl:nocaps
+# Load Wallpaper
 exec_always --no-startup-id feh --bg-fill ~/.config/wall.png
 ########################
+
