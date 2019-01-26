@@ -168,7 +168,7 @@ bar {
 
 # Custom bindings
 bindsym $mod+c exec --no-startup-id sh ~/.scripts/camtoggle.sh
-bindsym $mod+Shift+c exec --no-startup-id "urxvt -e vim ~/.config/i3/config"
+bindsym $mod+Shift+c exec --no-startup-id urxvt -e vim $HOME/$(printf ".config/i3/config\n.vimrc\n.bashrc" | dmenu)
 bindsym $mod+r exec urxvt -e ranger
 bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+F5 restart

@@ -30,18 +30,27 @@ use_color=true
 # Colorize bash prompt
 # PS1='\[\033[01;32m\][\u@\h \[\033[01;34m\]\W\[\033[01;32m\]]\[\033[01;34m\]\$\[\033[00m\] '
 PS1='[\h \W] '
+
 # Aliases
 alias cp="cp -i"        # Confirm overwrite
 alias df="df -h"        # Humand reabable
 alias free="free -m"    # Size in MB
 alias more=less         # If we want to see _more_ we use less
+
+# Shorter programs
 alias r=ranger          # Open ranger really fast
 alias pdf=zathura       # My prefered pdf reader
+alias g=git             # less typing
+alias v=vim             # Super fast vim
 
 # Typo prevention
 alias sl="ls"
 alias l="ls"
 alias s="ls"
+
+alias claer="clear"
+alias clera="clear"
+alias clea="clear"
 
 # Youtube aliases
 alias yt="youtube-dl --add-metadata -ic" # Download video
