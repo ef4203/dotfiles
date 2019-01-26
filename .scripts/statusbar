@@ -1,0 +1,5 @@
+#!/bin/bash
+while true; do
+     echo "$(acpi | awk '{print $4}' | sed 's/,//') $(date +%H:%M)"
+     sleep 5
+done

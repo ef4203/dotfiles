@@ -45,3 +45,8 @@ ln -s `pwd`/.config/mpv/input.conf ~/.config/mpv/input.conf
 printf "Installing zathura config...\n"
 ln -s `pwd`/.config/zathura/zathurarc ~/.config/zathura/zathurarc
 
+# Scripts
+echo "Installing scripts"
+mkdir ~/.scripts
+cp .scripts/* ~/.scripts
+

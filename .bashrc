@@ -28,8 +28,8 @@ alias ccat="highlight --out-format=ansi" # Color cat - print file with syntax hi
 use_color=true
 
 # Colorize bash prompt
-PS1='\[\033[01;32m\][\u@\h \[\033[01;34m\]\W\[\033[01;32m\]]\[\033[01;34m\]\$\[\033[00m\] '
-
+# PS1='\[\033[01;32m\][\u@\h \[\033[01;34m\]\W\[\033[01;32m\]]\[\033[01;34m\]\$\[\033[00m\] '
+PS1='[\h \W] '
 # Aliases
 alias cp="cp -i"        # Confirm overwrite
 alias df="df -h"        # Humand reabable

@@ -17,7 +17,7 @@ bindsym $mod+Shift+q kill
 
 # Start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop -nf #ffffff -nb #1e1e1e"
-bindsym $mod+d exec --no-startup-id "dmenu_run -b -nf '#FFF' -nb '#1E1E1E' -sb '#00FF00' -sf '#FFFFFF'"
+bindsym $mod+d exec --no-startup-id "dmenu_run -b -fn 'monospace:pixelsize=21' -nf '#FFF' -nb '#1E1E1E' -sb '#FFFFFF' -sf '#1E1E1E'"
 
 # Change focus
 bindsym $mod+h focus left
@@ -152,7 +152,7 @@ client.focused_inactive #ffffff #1e1e1e #ffffff #ffffff #ffffff
 # Start i3bar to display a workspace bar
 bar {
         i3bar_command i3bar
-        status_command i3status
+        status_command ~/.scripts/statusbar
         position bottom
 
         colors {
