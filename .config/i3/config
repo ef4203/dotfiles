@@ -4,7 +4,7 @@
 set $mod Mod4
 
 # Font for window titles (will also be used by the bar)
-font pango:Monospace Regular 10
+font pango:Monospace Regular 14
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -16,8 +16,8 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # Start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
-bindsym $mod+Shift+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop -nf #ffffff -nb #1e1e1e"
+bindsym $mod+d exec --no-startup-id "dmenu_run -b -nf '#FFF' -nb '#1E1E1E' -sb '#00FF00' -sf '#FFFFFF'"
 
 # Change focus
 bindsym $mod+h focus left
@@ -72,7 +72,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "Music"
+set $ws10 "10"
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -144,18 +144,25 @@ set_from_resource $darkwhite	color7  #000000
 set_from_resource $white	color15 #000000
 set $transparent		#00000000
 
-#                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
-#client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
-#client.unfocused	$transparent	$blue		$white		$darkblue		$darkblack
-#client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
-#client.urgent		$darkred	$darkred	$black		$darkred		$darkred
-#client.background $black
+client.focused #ffffff #1e1e1e #ffffff #ffffff #bbbbff
+client.unfocused #ffffff #1e1e1e #ffffff #ffffff #ffffff
+client.urgent #ffffff #1e1e1e #ffffff #ffffff #ffffff
+client.focused_inactive #ffffff #1e1e1e #ffffff #ffffff #ffffff
 
 # Start i3bar to display a workspace bar
 bar {
         i3bar_command i3bar
         status_command i3status
         position bottom
+
+        colors {
+            background #1e1e1e
+            statusline #ffffff
+            focused_workspace #1e1e1e #ffffff #1e1e1e
+            active_workspace #1e1e1e #ffffff #1e1e1e
+            inactive_workspace #1e1e1e #1e1e1e #ffffff
+            urgent_workspace #ff0000 #1e1e1e #ffffff
+        }
 }
 
 # Custom bindings
@@ -177,7 +184,7 @@ bindsym XF86MyComputer exec $TERMINAL -e ranger
 bindsym XF86HomePage exec $BROWSER
 
 # i3-gaps config
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3
 bindsym $mod+g gaps inner current plus 5
 bindsym $mod+Shift+g gaps inner current minus 5
 
