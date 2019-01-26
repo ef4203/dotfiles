@@ -18,6 +18,7 @@ bindsym $mod+Shift+q kill
 # Start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop -nf #ffffff -nb #1e1e1e"
 bindsym $mod+d exec --no-startup-id "dmenu_run -b -fn 'monospace:pixelsize=21' -nf '#FFF' -nb '#1E1E1E' -sb '#FFFFFF' -sf '#1E1E1E'"
+bindsym $mod+Shift+d exec --no-startup-id ~/.scripts/morc_menu
 
 # Change focus
 bindsym $mod+h focus left
@@ -168,13 +169,13 @@ bar {
 # Custom bindings
 bindsym $mod+c exec --no-startup-id sh ~/.scripts/camtoggle.sh
 bindsym $mod+Shift+c exec --no-startup-id "urxvt -e vim ~/.config/i3/config"
-bindsym $mod+r exec $TERMINAL -e ranger
+bindsym $mod+r exec urxvt -e ranger
 bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+F5 restart
 
 # Bind screenshot utility
-bindsym Print exec "gnome-screenshot -c" 
-bindsym Shift+Print exec "gnome-screenshot -i"
+bindsym Print exec "maim | xclip -selection clip -t image/png"
+bindsym --release Shift+Print exec "maim -s | xclip -selection clip -t image/png"
 
 # Bind System keys
 bindsym XF86PowerOff exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
