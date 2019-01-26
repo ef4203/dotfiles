@@ -160,6 +160,7 @@ bar {
 
 # Custom bindings
 bindsym $mod+c exec --no-startup-id sh ~/.scripts/camtoggle.sh
+bindsym $mod+Shift+c exec --no-startup-id "urxvt -e vim ~/.config/i3/config"
 bindsym $mod+r exec $TERMINAL -e ranger
 bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+F5 restart
@@ -176,7 +177,7 @@ bindsym XF86MyComputer exec $TERMINAL -e ranger
 bindsym XF86HomePage exec $BROWSER
 
 # i3-gaps config
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 bindsym $mod+g gaps inner current plus 5
 bindsym $mod+Shift+g gaps inner current minus 5
 
