@@ -1,53 +1,45 @@
 ! This file is to set the terminal colors/behavior
 
 ! black
-*color0:  #00070d
-! dark gray
-*color8:  #666666
+*.color0:       #1e1e1e
+*.color8:       #5f5a60
 
 ! red
-*color1:  #a83a71
-! bright red
-*color9:  #d78bb1
+*.color1:       #cf6a4c
+*.color9:       #cf6a4c
 
 ! green
-*color2:  #71a83a
-! bright green
-*color10: #b1d78b
+*.color2:       #8f9d6a
+*.color10:      #8f9d6a
 
 ! yellow
-*color3:  #a8713a
-! bright yellow
-*color11: #d7b18b
+*.color3:       #f9ee98
+*.color11:      #f9ee98
 
 ! blue
-*color4:  #3a71a8
-! bright blue
-*color12: #8bb1d7
+*.color4:       #7587a6
+*.color12:      #7587a6
 
 ! magenta
-*color5:  #713aa8
-! bright magenta
-*color13: #b18bd7
+*.color5:       #9b859d
+*.color13:      #9b859d
 
 ! cyan
-*color6:  #3aa871
-! bright cyan
-*color14: #8bd7b1
+*.color6:       #afc4db
+*.color14:      #afc4db
 
-! light gray
-*color7:  #a6a6a6
 ! white
-*color15: #e6e6e6
+*.color7:       #a7a7a7
+*.color15:      #ffffff
 
 ! urxvt settings
 URxvt.background:       [100]#1e1e1e
-URxvt.foreground:       #d9e6f2
+URxvt.foreground:       #ffffff
 URxvt.intensityStyles:  false
 URxvt.depth:            32
 URxvt.font:             xft:monospace:size=12
 URxvt.scrollBar:        false
-URxvt.cursorColor:      white
+URxvt.cursorColor:      #fffff
 URxvt.iso14755:         false
 URxvt.iso14755_52:      false
 
