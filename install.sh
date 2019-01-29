@@ -17,7 +17,6 @@ dotfiles=(
     .bashrc
     .vimrc
     .Xdefaults
-    .xinitrc
 )
 
 # Copy all dotfiles
