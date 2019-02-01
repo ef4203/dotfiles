@@ -23,7 +23,30 @@ Plugin 'rhysd/vim-clang-format'
 " Color theme
 Plugin 'ef4203/vim-code-dark'
 
+" Fuzzy finder
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" File tree
+Plugin 'scrooloose/nerdtree'
+
+" Auto completer
+Plugin 'Valloric/YouCompleteMe'
+
 call vundle#end()
+
+" Keep in mind to adjust this on DOS, e.g. change / to \\
+
+" Ignore JS/TS/Web Stack Files
+set wildignore+=*/node_modules/*
+
+" Ignore C/C++ Object files
+set wildignore+=*.o,*.obj,*.exe,*.out
+
+" Ignore C#.NET Files
+set wildignore+=*.Cache,*/bin/*,*/tmp/*,*/obj/*
+
+" Ignore Python Files
+set wildignore+=*/__pycache__/*,*.pyc
 
 " Auto indentation
 filetype plugin indent on
@@ -69,6 +92,7 @@ colorscheme codedark
 set cursorline
 
 " Access the system clipboard
+" (On DOS, it's 'unnamed' without plus)
 set clipboard=unnamedplus
 
 " Enable relative line numbering
@@ -92,6 +116,9 @@ noremap <F1> <nop>
 " Unbind another help menu
 noremap <S-k> <nop>
 
+" remove delay when pressing O
+set timeout ttimeoutlen=100
+
 " Easier split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -101,15 +128,24 @@ nnoremap <C-H> <C-W><C-H>
 " Map F6 to spellchecking
 map <F6> :setlocal spell! spelllang=en_us<CR>
 
-" Disable arrow keys because speed
+" (HARD MODE)
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+" (GOD MODE)
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
 
 " Enable autoformat on save
 autocmd FileType c,cpp,javascript ClangFormatAutoEnable
 
 " Enable Syntax highlighting for typescript
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
+
+" Open file tree
+map <C-n> :NERDTreeToggle<CR>
 
