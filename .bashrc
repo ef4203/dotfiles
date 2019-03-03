@@ -36,6 +36,7 @@ alias cp="cp -i"        # Confirm overwrite
 alias df="df -h"        # Humand reabable
 alias free="free -m"    # Size in MB
 alias more=less         # If we want to see _more_ we use less
+alias lsbloat="pacman -Qdtq"
 
 # Shorter programs
 alias r=ranger          # Open ranger really fast
