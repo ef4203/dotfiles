@@ -36,7 +36,8 @@ alias cp="cp -i"        # Confirm overwrite
 alias df="df -h"        # Humand reabable
 alias free="free -m"    # Size in MB
 alias more=less         # If we want to see _more_ we use less
-alias lsbloat="pacman -Qdtq"
+alias pacbloat="pacman -Qtdq"
+alias pacbig="pacman -Qi | awk '/^Name/{name=\$3} /^Installed Size/{print \$4\$5, name}' | sort -hr | sed '20q'"
 
 # Shorter programs
 alias r=ranger          # Open ranger really fast
