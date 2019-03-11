@@ -20,7 +20,7 @@ Plugin 'kana/vim-operator-user'
 " clang-format plugin
 Plugin 'rhysd/vim-clang-format'
 
-" Color theme
+" Color theme (Use the original for gvim on windows)
 Plugin 'ef4203/vim-code-dark'
 
 " Fuzzy finder
@@ -143,7 +143,7 @@ inoremap <Right> <nop>
 " Enable autoformat on save
 autocmd FileType c,cpp,javascript ClangFormatAutoEnable
 
-" Enable Syntax highlighting for typescript
+" Enable Syntax highlighting for typescript, no plugin required
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
 
 " Open file tree

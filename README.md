@@ -1,10 +1,12 @@
-# dotfiles
+# Dotfiles
 These are my relevant dotfiles.
 
 On a fresh install you can clone this directly in your
 (empty) home folder.
 
 But you can also cherry pick the files you like.
+
+Or use the installer script I wrote.
 
 # List of software
 
