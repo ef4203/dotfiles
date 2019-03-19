@@ -149,3 +149,9 @@ autocmd BufNewFile,BufRead *.ts set syntax=javascript
 " Open file tree
 map <C-n> :NERDTreeToggle<CR>
 
+" Disable Terminal bell
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
+" Ctrl Backspace delete last word
+imap <C-BS> <C-W>
