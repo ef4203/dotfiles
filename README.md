@@ -42,3 +42,34 @@ Or use the installer script I wrote.
 Note: compiling documents with my pandoc scripts
 requires a ``.csl`` file in the ``~/Documents/.common/`` 
 directory.
+
+# My Hardware
+## Desktop
+- OS: Arch Linux / Windows 10 Enterprise
+- CPU: AMD FX-8350
+- RAM: 12 GB @ 1336MHz
+- GPU: AMD Raedon R9 380x
+- Storage: 2x Samsung 500 GB SSD
+
+## Laptop
+- Model: Lenovo Thinkpad X230
+- OS: Windows 10 Enterprise
+- CPU: Intel i5-3320M
+- RAM: 8 GB @ 1600MHz
+- GPU: Intel HD 6000
+- Storage: 256 GB SSD
+
+## Laptop
+- Model: Microsoft Surface Go
+- OS: Windows 10 Enterprise
+- CPU: Intel 4415Y
+- RAM: 8 GB
+- GPU: Intel HD 615
+- Storage: 128 GB SSD
+
+## Server
+- OS: Arch Linux
+- CPU: Intel J3455
+- RAM: 4 GB
+- GPU: None
+- Storage: 1 TB HDD, 500 GB HDD
