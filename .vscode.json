@@ -1,13 +1,36 @@
 {
-  "workbench.iconTheme": "material-icon-theme",
-  "explorer.openEditors.visible": 0,
+  // Editor
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
   "editor.dragAndDrop": false,
-  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+
+  // Behavior
   "git.enableSmartCommit": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.build": true,
+    "**/.gh-pages": true
+  },
+  "files.exclude": {
+    "USE_GITIGNORE": true
+  },
+  "editor.renderWhitespace": "boundary",
+  "editor.folding": false,
+  "editor.rulers": [80],
+
+  // Visuals
+  "editor.minimap.enabled": false,
+  "explorer.openEditors.visible": 0,
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Terminal
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorBlinking": true
