@@ -37,7 +37,8 @@ Or use the installer script I wrote.
 - mohd-akram.vscode-html-format
 - editorconfig.editorconfig
 - streetsidesoftware.code-spell-checker
-- coenraads.bracket-pair-colorizer
+- k--kato.docomment
+
 
 Note: compiling documents with my pandoc scripts
 requires a ``.csl`` file in the ``~/Documents/.common/`` 
