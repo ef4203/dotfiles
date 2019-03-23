@@ -6,7 +6,7 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
 
-  // Behavior
+  // Things
   "git.enableSmartCommit": true,
   "workbench.startupEditor": "newUntitledFile",
   "search.exclude": {
@@ -16,19 +16,47 @@
     "**/dist": true,
     "**/build": true,
     "**/.build": true,
-    "**/.gh-pages": true
-  },
-  "files.exclude": {
-    "USE_GITIGNORE": true
+    "**/.gh-pages": true,
+    "**/bin": true,
+    "**/obj": true,
+    "**/.vs": true
   },
   "editor.renderWhitespace": "boundary",
   "editor.folding": false,
   "editor.rulers": [80],
+  "editor.codeLens": false,
+
+  "emmet.includeLanguages": {
+    "aspnetcorerazor": "html"
+  },
+
+  // Vim things
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": false,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [";"],
+      "after": [":"]
+    }
+  ],
+  "vim.handleKeys": {},
+
+  // Spell checker
+  "cSpell.showStatus": false,
+  "cSpell.allowCompoundWords": true,
 
   // Visuals
   "editor.minimap.enabled": false,
   "explorer.openEditors.visible": 0,
   "workbench.iconTheme": "material-icon-theme",
+  "files.exclude": {
+    "**/.vs": true,
+    "**/*.csproj.user": true,
+    "**/*.doc.xml": true,
+    "**/bin": true,
+    "**/node_modules": true,
+    "**/obj": true
+  },
 
   // Terminal
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
