@@ -9,6 +9,9 @@ stty -ixon
 # Auto cd into directory
 shopt -s autocd
 
+# Vim mode for bash
+set -o vi
+
 # Ingore duplicatse in .bash_history
 export HISTCONTROL=ignoredups
 
@@ -29,14 +32,16 @@ use_color=true
 
 # Colorize bash prompt
 # PS1='\[\033[01;32m\][\u@\h \[\033[01;34m\]\W\[\033[01;32m\]]\[\033[01;34m\]\$\[\033[00m\] '
-PS1='[\h \W] '
+PS1='\w '
 
 # Aliases
-alias cp="cp -i"        # Confirm overwrite
-alias df="df -h"        # Humand reabable
-alias free="free -m"    # Size in MB
-alias more=less         # If we want to see _more_ we use less
-alias pacbloat="pacman -Qtdq"
+alias cp="cp -i"         # Confirm overwrite
+alias df="df -h"         # Humand reabable
+alias free="free -m"     # Size in MB
+alias more=less          # If we want to see _more_ we use less
+
+# Pacman 
+alias pacbloat="pacman -Qtdq"  # Finds orphan packages
 alias pacbig="pacman -Qi | awk '/^Name/{name=\$3} /^Installed Size/{print \$4\$5, name}' | sort -hr | sed '20q'"
 
 # Shorter programs
