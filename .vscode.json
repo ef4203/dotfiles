@@ -50,5 +50,11 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\bash.exe",
   "git.enableSmartCommit": true,
-  "git.path": "C:\\WINDOWS\\wslgit.exe"
+  "git.path": "C:\\WINDOWS\\wslgit.exe",
+  "[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
