@@ -1,0 +1,5 @@
+[alias]
+    st = status
+    co = checkout
+    df = diff
+    lg = log -p
