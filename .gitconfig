@@ -1,5 +1,12 @@
+[remote "origin"]
+        prune = true
+[core]
+
+        editor = vim
 [alias]
-    st = status
-    co = checkout
-    df = diff
-    lg = log -p
+        st = status
+        co = checkout
+        df = diff
+        lg = log -p
+        p = push
+        c = commit -m
