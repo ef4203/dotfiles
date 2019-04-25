@@ -12,8 +12,10 @@ make_home_symlink() {
 
 # Dotfiles in home directory
 dotfiles=(
+    .bash_logout
     .bashrc
     .vimrc
+    .profile
 )
 
 # Copy all dotfiles
@@ -27,11 +29,6 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     echo "IMPORTANT: don't forget to run :PluginInstall first time you open vim"
 fi
-
-# Scripts
-echo "Installing scripts"
-mkdir ~/.scripts
-cp .scripts/* ~/.scripts
 
 if [ ! -f ~/.gitconfig ]; then
     cp .gitconfig ~/.gitconfig

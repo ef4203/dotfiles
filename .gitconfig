@@ -1,7 +1,6 @@
 [remote "origin"]
         prune = true
 [core]
-
         editor = vim
 [alias]
         st = status
