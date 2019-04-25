@@ -18,7 +18,7 @@ dotfiles=(
     .profile
 )
 
-# Copy all dotfiles
+# Softlink all dotfiles
 for dotfile in ${dotfiles[*]}; do
     make_home_symlink $dotfile $dotfile
 done
@@ -30,10 +30,17 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     echo "IMPORTANT: don't forget to run :PluginInstall first time you open vim"
 fi
 
+echo "Installing gitconfig"
+
+# If there is no gitconfig, just copy
 if [ ! -f ~/.gitconfig ]; then
     cp .gitconfig ~/.gitconfig
+    echo "Don't forget to set your git stuff, eg. user.name and user.email"
 else
+    # Append to gitconfig otherwhise
     if [ ! $(grep alias ~/.gitconfig) ]; then
         cat .gitconfig >> ~/.gitconfig
+    else 
+        "IMPORTANT: There's already aliases in your gitconfig, manual intervention required."
     fi
 fi

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo "This isn't as well updated, I'm not sure if everything works 100%"
+echo "Consider running install-wsl.sh, this works on Native linux as well"
+echo "If you still want to run this, remove line 6."
+exit
+
 make_home_symlink() {
     printf "Installing %s...\n" $1
 
