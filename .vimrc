@@ -32,6 +32,9 @@ Plugin 'scrooloose/nerdtree'
 " Auto completer
 Plugin 'Valloric/YouCompleteMe'
 
+" Code formater
+Plugin 'prettier/vim-prettier'
+
 call vundle#end()
 
 " Keep in mind to adjust this on DOS, e.g. change / to \\
@@ -141,7 +144,10 @@ inoremap <Left> <nop>
 inoremap <Right> <nop>
 
 " Enable autoformat on save
-autocmd FileType c,cpp,javascript ClangFormatAutoEnable
+autocmd FileType c,cpp ClangFormatAutoEnable
+
+" Map prettier
+noremap <C-f> :Prettier
 
 " Enable Syntax highlighting for typescript, no plugin required
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
