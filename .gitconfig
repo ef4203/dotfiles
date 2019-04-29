@@ -9,3 +9,4 @@
         lg = log -p
         p = push
         c = commit -m
+        conflict = diff --name-only --diff-filter=U 
