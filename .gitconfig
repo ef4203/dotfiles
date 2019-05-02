@@ -1,12 +1,12 @@
 [remote "origin"]
-        prune = true
+    prune = true
 [core]
-        editor = vim
+    editor = vim
 [alias]
-        st = status
-        co = checkout
-        df = diff
-        lg = log -p
-        p = push
-        c = commit -m
-        conflict = diff --name-only --diff-filter=U 
+    st = status
+    co = checkout
+    df = diff
+    lg = log -p
+    p = push
+    c = commit --verbose -m
+    conflict = diff --name-only --diff-filter=U 
