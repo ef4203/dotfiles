@@ -41,6 +41,6 @@ else
     if [ ! $(grep alias ~/.gitconfig) ]; then
         cat .gitconfig >> ~/.gitconfig
     else 
-        "IMPORTANT: There's already aliases in your gitconfig, manual intervention required."
+        echo "IMPORTANT: There's already aliases in your gitconfig, manual intervention required."
     fi
 fi
