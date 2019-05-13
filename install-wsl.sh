@@ -1,5 +1,4 @@
 #!/bin/bash
-
 make_home_symlink() {
     printf "Installing %s...\n" $1
 
@@ -44,3 +43,4 @@ else
         echo "IMPORTANT: There's already aliases in your gitconfig, manual intervention required."
     fi
 fi
+
