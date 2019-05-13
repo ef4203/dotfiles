@@ -30,13 +30,14 @@ alias ccat="highlight --out-format=ansi" # Color cat - print file with syntax hi
 # More colors
 use_color=true
 
-# Colorize bash prompt
+# Colorize bash prompt, depending on the OS
 if [[ "$OS" =~ "NT" ]]; then
+    # Windows prompt
     PS1='\[\033[01;32m\][bash \[\033[01;34m\]\W\[\033[01;32m\]]\[\033[01;34m\]\$\[\033[00m\] '
 else
+    # Other OS
     PS1='\[\033[01;32m\][\u@\h \[\033[01;34m\]\W\[\033[01;32m\]]\[\033[01;34m\]\$\[\033[00m\] '
 fi
-# PS1='\w '
 
 # Aliases
 alias cp="cp -i"         # Confirm overwrite
@@ -44,27 +45,24 @@ alias df="df -h"         # Humand reabable
 alias free="free -m"     # Size in MB
 alias more=less          # If we want to see _more_ we use less
 
-# Pacman 
-alias pacbloat="pacman -Qtdq"  # Finds orphan packages
-alias pacbig="pacman -Qi | awk '/^Name/{name=\$3} /^Installed Size/{print \$4\$5, name}' | sort -hr | sed '20q'"
-
-# Shorter programs
 alias r=ranger          # Open ranger really fast
-alias pdf=zathura       # My prefered pdf reader
 alias g=git             # less typing
 alias v=vim             # Super fast vim
 
-# Typo prevention
-alias sl="ls"
-alias l="ls"
-alias s="ls"
+alias sl="ls"           # Typo prevention
+alias l="ls"            # Typo prevention
+alias s="ls"            # Typo prevention
 
-alias claer="clear"
-alias clera="clear"
-alias clea="clear"
+alias claer="clear"     # Typo prevention
+alias clera="clear"     # Typo prevention
+alias clea="clear"      # Typo prevention
 
-# Youtube aliases
-alias yt="youtube-dl --add-metadata -ic" # Download video
-alias yta="yt -x -f bestaudio/best"      # Download only audio
-alias YT="youtube-viewer"                # View youtube video
+# LINUX DESTOP SPECIFIC STUFF (norm vld)
+
+# alias pdf=zathura       # My prefered pdf reader
+# alias pacbloat="pacman -Qtdq"  # Finds orphan packages
+# alias pacbig="pacman -Qi | awk '/^Name/{name=\$3} /^Installed Size/{print \$4\$5, name}' | sort -hr | sed '20q'"
+# alias yt="youtube-dl --add-metadata -ic" # Download video
+# alias yta="yt -x -f bestaudio/best"      # Download only audio
+# alias YT="youtube-viewer"                # View youtube video
 
