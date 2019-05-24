@@ -1,7 +1,6 @@
 {
     "editor.formatOnPaste": false,
     "editor.dragAndDrop": false,
-    "editor.formatOnSave": false,
     "editor.renderWhitespace": "boundary",
     "editor.folding": false,
     "editor.rulers": [
@@ -9,6 +8,9 @@
     ],
     "editor.codeLens": false,
     "editor.minimap.enabled": false,
+    "editor.colorDecorators": false,
+    "editor.hover.delay": 0,
+    "editor.formatOnType": true,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "files.exclude": {
@@ -64,5 +66,5 @@
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "debug.console.fontFamily": "Consolas, 'Courier New', monospace"
+    "debug.console.fontFamily": "Consolas, 'Courier New', monospace",
 }
