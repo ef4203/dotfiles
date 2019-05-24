@@ -67,5 +67,5 @@
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "debug.console.fontFamily": "Consolas, 'Courier New', monospace",
+    "debug.console.fontFamily": "Consolas, 'Courier New', monospace"
 }
