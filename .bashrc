@@ -34,8 +34,6 @@ use_color=true
 if [[ "$OS" =~ "NT" ]]; then
     # Windows prompt
     PS1='\[\033[01;32m\][bash \[\033[01;34m\]\W\[\033[01;32m\]]\[\033[01;34m\]\$\[\033[00m\] '
-    # Automatically CD into ~ when on windows
-    cd ~
 else
     # Other OS
     PS1='\[\033[01;32m\][\u@\h \[\033[01;34m\]\W\[\033[01;32m\]]\[\033[01;34m\]\$\[\033[00m\] '
