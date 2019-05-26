@@ -2,4 +2,4 @@
 
 # "Google" something from the command line
 
-firefox https://duckduckgo.com/?q=asd$( echo $@ | sed 's/ /+/g' )
+firefox https://duckduckgo.com/?q=$( echo $@ | sed 's/ /+/g' )
