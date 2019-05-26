@@ -53,4 +53,3 @@ ln -s `pwd`/.config/zathura/zathurarc ~/.config/zathura/zathurarc
 echo "Installing scripts"
 mkdir ~/.scripts
 cp .scripts/* ~/.scripts
-

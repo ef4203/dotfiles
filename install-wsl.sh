@@ -22,6 +22,9 @@ for dotfile in ${dotfiles[*]}; do
     make_home_symlink $dotfile $dotfile
 done
 
+# Speicifc to WSL and tty login setups
+make_home_symlink .profile .bash_profile
+
 # Install vundle, if missing
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     echo "Installing Vundle.vim..."
@@ -39,7 +42,7 @@ else
     # Append to gitconfig otherwhise
     if [ ! $(grep alias ~/.gitconfig) ]; then
         cat .gitconfig >> ~/.gitconfig
-    else 
+    else
         echo "IMPORTANT: There's already aliases in your gitconfig, manual intervention required."
     fi
 fi

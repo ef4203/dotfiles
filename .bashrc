@@ -25,17 +25,17 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 # Cat with syntax highlight
-alias ccat="highlight --out-format=ansi" # Color cat - print file with syntax highlighting.
+alias ccat="highlight --out-format=ansi"
 
 # More colors
 use_color=true
 
 # Colorize bash prompt, depending on the OS
 if [[ "$OS" =~ "NT" ]]; then
-    # Windows prompt
+    # bash prombt for Git bash for Windows
     PS1='\[\033[01;32m\][bash \[\033[01;34m\]\W\[\033[01;32m\]]\[\033[01;34m\]\$\[\033[00m\] '
 else
-    # Other OS
+    # Anything else
     PS1='\[\033[01;32m\][\u@\h \[\033[01;34m\]\W\[\033[01;32m\]]\[\033[01;34m\]\$\[\033[00m\] '
 fi
 
@@ -57,7 +57,7 @@ alias claer="clear"     # Typo prevention
 alias clera="clear"     # Typo prevention
 alias clea="clear"      # Typo prevention
 
-# LINUX DESTOP SPECIFIC STUFF (norm vld)
+# LINUX DESTOP SPECIFIC STUFF :norm vld
 
 # alias pdf=zathura       # My prefered pdf reader
 # alias pacbloat="pacman -Qtdq"  # Finds orphan packages
@@ -65,4 +65,3 @@ alias clea="clear"      # Typo prevention
 # alias yt="youtube-dl --add-metadata -ic" # Download video
 # alias yta="yt -x -f bestaudio/best"      # Download only audio
 # alias YT="youtube-viewer"                # View youtube video
-
