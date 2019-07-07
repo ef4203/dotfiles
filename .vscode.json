@@ -1,5 +1,6 @@
 {
     "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
     "editor.dragAndDrop": false,
     "editor.renderWhitespace": "boundary",
     "editor.folding": false,
@@ -23,7 +24,7 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.activityBar.visible": false,
-    "workbench.editor.showTabs": false,
+    "workbench.editor.showTabs": true,
     "workbench.settings.editor": "json",
     "workbench.useExperimentalGridLayout": true,
     "window.menuBarVisibility": "toggle",
