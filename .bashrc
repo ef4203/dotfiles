@@ -57,6 +57,9 @@ alias claer="clear"     # Typo prevention
 alias clera="clear"     # Typo prevention
 alias clea="clear"      # Typo prevention
 
+# Custom Scripts
+alias unfuck="git branch -vv | grep ': gone]' | grep -v \"\*\" | awk '{ print \$1 }' | xargs -r git branch -d"
+
 # LINUX DESTOP SPECIFIC STUFF :norm vld
 
 # alias pdf=zathura       # My prefered pdf reader
