@@ -37,7 +37,7 @@ URxvt.background:       [100]#1e1e1e
 URxvt.foreground:       #ffffff
 URxvt.intensityStyles:  false
 URxvt.depth:            32
-URxvt.font:             xft:monospace:size=12
+URxvt.font:             xft:monospace:size=10
 URxvt.scrollBar:        false
 URxvt.cursorColor:      #fffff
 URxvt.iso14755:         false
