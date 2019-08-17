@@ -58,10 +58,10 @@ alias clera="clear"     # Typo prevention
 alias clea="clear"      # Typo prevention
 
 # Custom Scripts
+# TODO: Move this to gitconfig
 alias unfuck="git branch -vv | grep ': gone]' | grep -v \"\*\" | awk '{ print \$1 }' | xargs -r git branch -d"
 
 # LINUX DESTOP SPECIFIC STUFF :norm vld
-
 # alias pdf=zathura       # My prefered pdf reader
 # alias pacbloat="pacman -Qtdq"  # Finds orphan packages
 # alias pacbig="pacman -Qi | awk '/^Name/{name=\$3} /^Installed Size/{print \$4\$5, name}' | sort -hr | sed '20q'"
