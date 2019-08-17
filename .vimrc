@@ -64,7 +64,7 @@ set noswapfile
 set number
 
 " Disable line wrapping
-set nowrap
+" set nowrap
 
 " Make backspace behave like in other editors
 set backspace=indent,eol,start
@@ -144,7 +144,7 @@ inoremap <Left> <nop>
 inoremap <Right> <nop>
 
 " Enable autoformat on save
-autocmd FileType c,cpp ClangFormatAutoEnable
+autocmd FileType c,cpp,javascript ClangFormatAutoEnable
 
 " Map prettier
 noremap <C-f> :Prettier
