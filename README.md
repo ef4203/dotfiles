@@ -1,76 +1,44 @@
-# Dotfiles
-These are my relevant dotfiles.
+# Dotfiles / Configuration files
 
-On a fresh install you can clone this directly in your
-(empty) home folder.
+> Repository of all the configurations and scripts I use.
 
-But you can also cherry pick the files you like.
+Use this or don't, I don't give support or liability for any of the scripts and configuration here.
+Side effects may include sudden vim keybinds, crypting shorthands and overwritten configuration.
 
-Or use the installer script I wrote.
+# Installation
 
-# List of software
-## Editors
-- Vim
-- VSCode
-- Visual Studio
-## WM
-- Cinnamon
-- i3
-## Other
-- ranger
-- zathura
-- mpv
-- youtube-dl
-- youtube-viewer
-- urxvt
-- pandoc
-- texlive-most texlive-lang
+Remember;
 
-## VSCode Plugins
-- angular.ng-template
-- ms-vscode.vscode-typescript-tslint-plugin
-- rbbit.typescript-hero
-- esbenp.prettier-vscode
-- christian-kohler.path-intellisense
-- pkief.material-icon-theme
-- zignd.html-css-class-completion
-- mohd-akram.vscode-html-format
-- editorconfig.editorconfig
-- streetsidesoftware.code-spell-checker
-- k--kato.docomment
+```sh
+git clone --recursive https://github.com/ef4203/dotfiles
+```
 
+## Windows
 
-Note: compiling documents with my pandoc scripts
-requires a ``.csl`` file in the ``~/Documents/.common/`` 
-directory.
+```powershell
+Set-Location Windows
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+.\install.ps1
+```
 
-# My Hardware
-## Desktop
-- OS: Arch Linux / Windows 10 Enterprise
-- CPU: AMD FX-8350
-- RAM: 12 GB @ 1336MHz
-- GPU: AMD Raedon R9 380x
-- Storage: 2x Samsung 500 GB SSD
+## Linux
 
-## Laptop
-- Model: Lenovo Thinkpad X230
-- OS: Windows 10 Enterprise
-- CPU: Intel i5-3320M
-- RAM: 8 GB @ 1600MHz
-- GPU: Intel HD 6000
-- Storage: 256 GB SSD
+```sh
+cd Linux
+./install.sh
+```
 
-## Laptop
-- Model: Microsoft Surface Go
-- OS: Windows 10 Enterprise
-- CPU: Intel 4415Y
-- RAM: 8 GB
-- GPU: Intel HD 615
-- Storage: 128 GB SSD
+# Contribution
 
-## Server
-- OS: Arch Linux
-- CPU: Intel J3455
-- RAM: 4 GB
-- GPU: None
-- Storage: 1 TB HDD, 500 GB HDD
+Feel free to contribute to this repository, but do keep in mind, the configurations here are very personal.
+
+**I don't accept PRs that:**
+
+- Overwrite my personal configuration
+- Add configuration I dislike
+- Contain scripts that don't run on my machines
+
+**I am happy about PRs which:**
+
+- Clean up scripts
+- Add usefull scripts and configurations

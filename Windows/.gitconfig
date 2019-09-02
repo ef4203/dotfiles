@@ -1,0 +1,12 @@
+[remote "origin"]
+    prune = true
+[core]
+    editor = notepad
+[alias]
+    st = status
+    co = checkout
+    df = diff
+    lg = log -p
+    p = push
+    c = commit --verbose -n -m
+    conflict = diff --name-only --diff-filter=U
