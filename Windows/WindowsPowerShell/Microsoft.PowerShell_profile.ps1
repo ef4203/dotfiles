@@ -1,8 +1,4 @@
-﻿Set-Alias -Name g -Value git
-
-Set-Alias -Name less -Value more
-
-
+﻿# Cmdlet that provides a Linux-Like sudo command.
 function sudo
 {
     if ($args.Length -eq 1)
@@ -16,4 +12,9 @@ function sudo
     }
 }
 
+# Aliases for less typing.
+Set-Alias -Name g -Value git
+Set-Alias -Name less -Value more
+
+# Activate fancy prompt.
 pshazz use aag
