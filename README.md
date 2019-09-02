@@ -3,7 +3,7 @@
 > Repository of all the configurations and scripts I use.
 
 Use this or don't, I don't give support or liability for any of the scripts and configuration here.
-Side effects may include sudden vim keybinds, crypting shorthands and overwritten configuration.
+Side effects may include sudden vim keybinds, cryptic shorthands and overwritten configuration.
 
 # Installation
 
