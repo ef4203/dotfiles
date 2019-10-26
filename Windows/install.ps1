@@ -20,10 +20,11 @@ If ($devenabled -eq "Yes")
     choco install chromium
     choco install vscode
     choco install azure-data-studio
+    choco install cmdermini
     choco install git.install --params "/NoShellIntegration /GitOnlyOnPath /WindowsTerminal"
 
     # Confgiure git
-    Start-Process -UseNewEnvironment git config --global core.editor "notepad"
+    Start-Process -UseNewEnvironment git config --global core.editor "vim"
 
     Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?linkid=853016 -OutFile SQL-Server-DEV.exe
     Start-Process .\SQL-Server-DEV.exe
