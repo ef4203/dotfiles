@@ -9,4 +9,5 @@
     lg = log -p
     p = push
     c = commit --verbose -n -m
+    cm = commit -a --verbose -n
     conflict = diff --name-only --diff-filter=U

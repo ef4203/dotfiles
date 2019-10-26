@@ -2,15 +2,15 @@
 
 # Add VB assembly for dialgue boxes and ask questions
 Add-Type -AssemblyName Microsoft.VisualBasic
-$devenabled = [Microsoft.VisualBasic.Interaction]::MsgBox("Will this be a DEVELOPER machine? (This will install Chromium, VSCode, ADS, Git, Visual Studio, SQL)",'YesNo,Question', "Software Install Script")
-$additionals = [Microsoft.VisualBasic.Interaction]::MsgBox("Do you want to install additional software? (This will install Keepass, sharex, spotify, ffmpeg, youtube-dl, OBS)",'YesNo,Question', "Software Install Script")
+$devenabled = [Microsoft.VisualBasic.Interaction]::MsgBox("Developer machine?",'YesNo,Question', "Software Install Script")
+$additionals = [Microsoft.VisualBasic.Interaction]::MsgBox("Additional Software?",'YesNo,Question', "Software Install Script")
 
 # Install and configure choco package manager
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 choco feature enable -n allowGlobalConfirmation
 
-# Install Software With Choco
-# Base stuff
+# Every computers
+
 choco install firefox
 choco install sumatrapdf.install
 
@@ -18,20 +18,46 @@ choco install sumatrapdf.install
 If ($devenabled -eq "Yes")
 {
     choco install chromium
-    choco install vscode
     choco install azure-data-studio
+
+    # Visual Studio Code
+    choco install vscode
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/Code/settings.json" -OutFile "$Env:APPDATA\Code\User\settings.json"
+    code --install-extension aaron-bond.better-comments
+    code --install-extension Angular.ng-template
+    code --install-extension christian-kohler.path-intellisense
+    code --install-extension CoenraadS.bracket-pair-colorizer
+    code --install-extension eamodio.gitlens
+    code --install-extension EditorConfig.EditorConfig
+    code --install-extension eg2.vscode-npm-script
+    code --install-extension esbenp.prettier-vscode
+    code --install-extension firefox-devtools.vscode-firefox-debug
+    code --install-extension HookyQR.beautify
+    code --install-extension ms-python.python
+    code --install-extension ms-vscode.cpptools
+    code --install-extension ms-vscode.Go
+    code --install-extension ms-vscode.vscode-typescript-tslint-plugin
+    code --install-extension PKief.material-icon-theme
+    code --install-extension streetsidesoftware.code-spell-checker
+    code --install-extension streetsidesoftware.code-spell-checker-german
+    code --install-extension twxs.cmake
+    code --install-extension VisualStudioExptTeam.vscodeintellicode
+    code --install-extension vscodevim.vim
+    code --install-extension webfreak.debug
+    code --install-extension Zignd.html-css-class-completio
+    code --install-extension fallenwood.vim
+
+    # Vim
+    choco install vim
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/.vimrc" -OutFile "$Env:USERPROFILE\.vimrc"
+
+    # Terminal Emulator
     choco install cmdermini
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/user_aliases.cmd" -OutFile "C:\tools\cmdermini\config\user_aliases.cmd"
+
+    # Git
     choco install git.install --params "/NoShellIntegration /GitOnlyOnPath /WindowsTerminal"
-
-    # Confgiure git
-    Start-Process -UseNewEnvironment git config --global core.editor "vim"
-
-    Invoke-WebRequest -Uri https://go.microsoft.com/fwlink/?linkid=853016 -OutFile SQL-Server-DEV.exe
-    Start-Process .\SQL-Server-DEV.exe
-    Invoke-WebRequest -Uri https://statics.teams.microsoft.com/production-windows-x64/1.2.00.21068/Teams_windows_x64.exe -OutFile Teams_windows_x64.exe
-    Start-Process .\Teams_windows_x64.exe
-    Invoke-WebRequest -Uri https://download.visualstudio.microsoft.com/download/pr/b6a85ca1-3add-4391-9d24-27fea671c700/ea7ec3e24daf9852dabe671a8c8b7131/vs_community.exe -OutFile vs_community.exe
-    Start-Process .\vs_community.exe
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/.gitconfig" -OutFile "$Env:USERPROFILE\.gitconfig"
 }
 
 # Install personal stuff
