@@ -12,7 +12,7 @@ Side effects may include sudden vim keybinds, cryptic shorthands and overwritten
 Copy the entire command into an elevated powershell.
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ef4203/dotfiles/masterRefreshEnv.cmdRefreshEnv.cmd/Windows/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/install.ps1'))
 ```
 
 ## Linux
