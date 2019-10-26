@@ -22,6 +22,7 @@ If ($devenabled -eq "Yes")
 
     # Visual Studio Code
     choco install vscode
+    RefreshEnv
     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/Code/settings.json" -OutFile "$Env:APPDATA\Code\User\settings.json"
     code --install-extension aaron-bond.better-comments
     code --install-extension Angular.ng-template

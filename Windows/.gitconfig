@@ -1,7 +1,7 @@
 [remote "origin"]
     prune = true
 [core]
-    editor = notepad
+    editor = vim
 [alias]
     st = status
     co = checkout
