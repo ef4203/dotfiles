@@ -7,18 +7,12 @@ Side effects may include sudden vim keybinds, cryptic shorthands and overwritten
 
 # Installation
 
-Remember;
-
-```sh
-git clone --recursive https://github.com/ef4203/dotfiles
-```
-
 ## Windows
 
+Copy the entire command into an elevated powershell.
+
 ```powershell
-Set-Location Windows
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
-.\install.ps1
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ef4203/dotfiles/masterRefreshEnv.cmdRefreshEnv.cmd/Windows/install.ps1'))
 ```
 
 ## Linux
