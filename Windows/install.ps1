@@ -19,6 +19,7 @@ If ($devenabled -eq "Yes")
 {
     choco install chromium
     choco install azure-data-studio
+    choco install insomnia-rest-api-client
 
     # Visual Studio Code
     choco install vscode
