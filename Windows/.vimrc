@@ -93,6 +93,5 @@ autocmd GUIEnter * set visualbell t_vb=
 set guioptions=
 set guifont=Consolas:h12
 
-
 " Ctrl Backspace delete last word
 imap <C-BS> <C-W>
