@@ -1,3 +1,27 @@
+" Vundle stuff
+set nocompatible              
+filetype off                 
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Load plugin manager
+Plugin 'VundleVim/Vundle.vim'
+
+" Automatically close brackets
+Plugin 'jiangmiao/auto-pairs'
+
+" Editorconfig
+Plugin 'editorconfig/editorconfig-vim'
+
+" Fuzzy finder
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" Auto completer
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
+
 " Auto indentation
 filetype plugin indent on
 
@@ -15,6 +39,13 @@ set nowrap
 
 " Make backspace behave like in other editors
 set backspace=indent,eol,start
+
+" Ignore JS/TS/Web Files
+set wildignore+=*\\node_modules\\*
+" Ignore C/C++ Object files
+set wildignore+=*.o,*.obj,*.exe,*.out
+" Ignore C#.NET Files
+set wildignore+=*.Cache,*\\bin\\*,*\\tmp\\*,*\\obj\\*
 
 " Fix indentation and encoding
 set softtabstop=4
@@ -92,6 +123,11 @@ set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions=
 set guifont=Consolas:h12
+
+" YCM settings
+map <C-i> :YcmCompleter GoTo<CR>
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Ctrl Backspace delete last word
 imap <C-BS> <C-W>
