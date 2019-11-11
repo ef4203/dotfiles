@@ -20,6 +20,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Auto completer
 Plugin 'Valloric/YouCompleteMe'
 
+" Clang-Format
+Plugin 'kana/vim-operator-user'
+Plugin 'rhysd/vim-clang-format'
+
 call vundle#end()
 
 " Auto indentation
@@ -128,6 +132,12 @@ set guifont=Consolas:h12
 map <C-i> :YcmCompleter GoTo<CR>
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
+" Clang-format settings
+let g:clang_format#code_style = 'Microsoft'
+autocmd FileType c,cpp ClangFormatAutoEnable
 
 " Ctrl Backspace delete last word
 imap <C-BS> <C-W>
