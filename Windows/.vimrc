@@ -74,7 +74,7 @@ set hid
 set si
 set cin
 
-" Set the colorscheme
+" Set the color scheme
 color desert
 
 " Enable cursor line
@@ -139,5 +139,15 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:clang_format#code_style = 'Microsoft'
 autocmd FileType c,cpp ClangFormatAutoEnable
 
-" Ctrl Backspace delete last word
+" CTRL+Backspace delete last word
 imap <C-BS> <C-W>
+
+" Code runner for C
+function RunThisAsC()
+    !clang -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wunused-parameter % -o tmp.exe && .\tmp.exe
+endfunction
+autocmd FileType c map <F5> :call RunThisAsC()<CR>
+
+" Spell checker
+map <F6> :setlocal spell! spelllang=en_us<CR>
+
