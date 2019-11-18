@@ -1,13 +1,13 @@
 [remote "origin"]
     prune = true
 [core]
-    editor = vim
+    editor = gvim
 [alias]
     st = status
     co = checkout
-    df = diff
+    df = diff -w -W
     lg = log -p
-    p = push
-    c = commit --verbose -n -m
-    cm = commit -a --verbose -n
+    p = push -v
+    c = commit -v -n -m
+    cm = commit -a -v -n
     conflict = diff --name-only --diff-filter=U
