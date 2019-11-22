@@ -5,7 +5,7 @@
 [alias]
     st = status
     co = checkout
-    df = diff -w -W
+    df = diff -w
     lg = log -p
     p = push -v
     c = commit -v -n -m
