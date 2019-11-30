@@ -10,7 +10,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 choco feature enable -n allowGlobalConfirmation
 
 # Every computers
-
 choco install firefox
 choco install sumatrapdf.install
 
@@ -22,7 +21,7 @@ If ($devenabled -eq "Yes")
     choco install insomnia-rest-api-client
 
     # Visual Studio Code
-    choco install vscode
+    choco install vscode --params "/NoDesktopIcon /NoQuicklaunchIcon /NoContextMenuFiles /NoContextMenuFolders"
     RefreshEnv
     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/Code/settings.json" -OutFile "$Env:APPDATA\Code\User\settings.json"
     code --install-extension aaron-bond.better-comments
@@ -50,7 +49,7 @@ If ($devenabled -eq "Yes")
     code --install-extension fallenwood.vim
 
     # Vim
-    choco install vim
+    choco install vim --params "/NoDefaultVimrc /NoDesktopShortcuts"
     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/.vimrc" -OutFile "$Env:USERPROFILE\.vimrc"
 
     # Terminal Emulator
