@@ -65,6 +65,6 @@ alias unfuck="git branch -vv | grep ': gone]' | grep -v \"\*\" | awk '{ print \$
 # alias pdf=zathura       # My prefered pdf reader
 # alias pacbloat="pacman -Qtdq"  # Finds orphan packages
 # alias pacbig="pacman -Qi | awk '/^Name/{name=\$3} /^Installed Size/{print \$4\$5, name}' | sort -hr | sed '20q'"
-# alias yt="youtube-dl --add-metadata -ic" # Download video
+# alias yt="youtube-dl --add-metadata -ic -f best" # Download video
 # alias yta="yt -x -f bestaudio/best"      # Download only audio
 # alias YT="youtube-viewer"                # View youtube video
