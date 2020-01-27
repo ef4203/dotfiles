@@ -1,6 +1,5 @@
 #Requires -RunAsAdministrator
 
-# Add VB assembly for dialgue boxes and ask questions
 Add-Type -AssemblyName Microsoft.VisualBasic
 $devenabled = [Microsoft.VisualBasic.Interaction]::MsgBox("Developer machine?",'YesNo,Question', "Software Install Script")
 $additionals = [Microsoft.VisualBasic.Interaction]::MsgBox("Additional Software?",'YesNo,Question', "Software Install Script")
@@ -19,11 +18,11 @@ If ($devenabled -eq "Yes")
     choco install chromium
     choco install azure-data-studio
     choco install insomnia-rest-api-client
+    choco install mremoteng
 
     # Visual Studio Code
     choco install vscode --params "/NoDesktopIcon /NoQuicklaunchIcon /NoContextMenuFiles /NoContextMenuFolders"
     RefreshEnv
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/Code/settings.json" -OutFile "$Env:APPDATA\Code\User\settings.json"
     code --install-extension aaron-bond.better-comments
     code --install-extension Angular.ng-template
     code --install-extension christian-kohler.path-intellisense
@@ -50,11 +49,6 @@ If ($devenabled -eq "Yes")
 
     # Vim
     choco install vim --params "/NoDefaultVimrc /NoDesktopShortcuts"
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/.vimrc" -OutFile "$Env:USERPROFILE\.vimrc"
-
-    # Terminal Emulator
-    choco install cmdermini
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/user_aliases.cmd" -OutFile "C:\tools\cmdermini\config\user_aliases.cmd"
 
     # Git
     choco install git.install --params "/NoShellIntegration /GitOnlyOnPath /WindowsTerminal"
@@ -65,20 +59,9 @@ If ($devenabled -eq "Yes")
 If ($additionals -eq "Yes")
 {
     choco install keepass
-    choco install sharex
     choco install spotify
     choco install ffmpeg
     choco install youtube-dl
-    choco install obs-studio
-
-    # Remove 'Send to ShareX' shell entry
-    New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
-    Push-Location
-    Set-Location HKCR:\Directory\shell
-    Remove-Item -Recurse ShareX
-    Set-Location -LiteralPath HKCR:\*\shell
-    Remove-Item -Recurse ShareX
-    Pop-Location
 }
 
 # Enable 'Show File Extensions' as Explorer setting

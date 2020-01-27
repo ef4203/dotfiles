@@ -17,13 +17,6 @@ Plugin 'editorconfig/editorconfig-vim'
 " Fuzzy finder
 Plugin 'ctrlpvim/ctrlp.vim'
 
-" Auto completer
-Plugin 'Valloric/YouCompleteMe'
-
-" Clang-Format
-Plugin 'kana/vim-operator-user'
-Plugin 'rhysd/vim-clang-format'
-
 call vundle#end()
 
 " Auto indentation
@@ -107,18 +100,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" (HARD MODE)
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-
-" (GOD MODE)
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-
 " Enable Syntax highlighting for typescript, no plugin required
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
 
@@ -128,25 +109,8 @@ autocmd GUIEnter * set visualbell t_vb=
 set guioptions=
 set guifont=Consolas:h12
 
-" YCM settings
-map <C-i> :YcmCompleter GoTo<CR>
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-
-" Clang-format settings
-let g:clang_format#code_style = 'Microsoft'
-autocmd FileType c,cpp ClangFormatAutoEnable
-
 " CTRL+Backspace delete last word
 imap <C-BS> <C-W>
-
-" Code runner for C
-function RunThisAsC()
-    !clang -std=c99 -pedantic -Wall -Wextra -Wfloat-equal -Wshadow -Wunused-parameter % -o tmp.exe && .\tmp.exe
-endfunction
-autocmd FileType c map <F5> :call RunThisAsC()<CR>
 
 " Spell checker
 map <F6> :setlocal spell! spelllang=en_us<CR>
