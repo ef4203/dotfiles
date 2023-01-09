@@ -1,0 +1,17 @@
+[user]
+	name = User
+	email = xxxx@example.com
+	signingkey = XXXXXX
+[commit]
+	gpgsign = true
+[remote "origin"]
+    prune = true
+[alias]
+	st = status
+	co = checkout
+	df = diff -w
+	lg = log -p
+	p = push -v
+	c = commit -v -n -m
+	cm = commit -a -v -n
+	conflict = diff --name-only --diff-filter=U

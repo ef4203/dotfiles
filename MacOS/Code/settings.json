@@ -1,0 +1,49 @@
+{
+    "breadcrumbs.enabled": false,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.dragAndDrop": false,
+    "editor.renderWhitespace": "boundary",
+    "editor.folding": false,
+    "editor.codeLens": false,
+    "editor.minimap.enabled": false,
+    "editor.colorDecorators": false,
+    "editor.hover.delay": 200,
+    "editor.formatOnType": true,
+    "editor.suggestSelection": "first",
+    "editor.quickSuggestionsDelay": 0,
+    "explorer.confirmDelete": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": {
+        "**/*.csproj.user": true,
+        "**/bin": true,
+        "**/node_modules": true,
+        "**/obj": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/coverage": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/.build": true,
+        "**/.gh-pages": true,
+        "**/bin": true,
+        "**/obj": true,
+        "**/.vs": true
+    },
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": false,
+    "vim.handleKeys": {},
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                ";"
+            ],
+            "after": [
+                ":"
+            ]
+        }
+    ],
+}

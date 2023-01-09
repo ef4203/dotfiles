@@ -1,7 +1,5 @@
 [remote "origin"]
     prune = true
-[core]
-    editor = gvim
 [alias]
     st = status
     co = checkout
