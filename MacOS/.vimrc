@@ -54,8 +54,7 @@ colorscheme ron
 set cursorline
 
 " Access the system clipboard
-" (On DOS, it's 'unnamed' without plus)
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Enable relative line numbering
 " set rnu

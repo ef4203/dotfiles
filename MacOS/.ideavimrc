@@ -1,0 +1,17 @@
+" Access the system clipboard
+set clipboard+=unnamed
+
+" Bind ; as : as it's more convenient
+noremap ; :
+
+" Unbind Ex mode
+noremap Q <nop>
+
+" Easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Ctrl Backspace delete last word
+imap <C-BS> <C-W>
