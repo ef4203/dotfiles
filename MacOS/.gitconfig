@@ -5,7 +5,7 @@
 [commit]
 	gpgsign = true
 [remote "origin"]
-    prune = true
+	prune = true
 [alias]
 	st = status
 	co = checkout
