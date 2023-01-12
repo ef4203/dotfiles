@@ -50,8 +50,8 @@ set numberwidth=6
 set encoding=utf-8
 
 " Set the colorscheme
-colorscheme ron
-set cursorline
+" colorscheme ron
+" set cursorline
 
 " Access the system clipboard
 set clipboard=unnamed
