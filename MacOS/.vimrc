@@ -49,7 +49,7 @@ set mouse=a
 set numberwidth=6
 set encoding=utf-8
 
-" Set the colorscheme
+" Set the colorscheme and cursorline
 " colorscheme ron
 " set cursorline
 
@@ -77,7 +77,7 @@ noremap <F1> <nop>
 " Unbind another help menu
 noremap <S-k> <nop>
 
-" remove delay when pressing O
+" Remove delay when pressing O
 set timeout ttimeoutlen=100
 
 " Easier split navigation
@@ -87,12 +87,14 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " (HARD MODE)
+" Comment this out if you are new to vim
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
 " (GOD MODE)
+" Comment this out if you are new to vim
 inoremap <Up> <nop>
 inoremap <Down> <nop>
 inoremap <Left> <nop>
