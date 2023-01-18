@@ -45,5 +45,10 @@
                 ":"
             ]
         }
-    ]
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.startupEditor": "none",
+    "telemetry.telemetryLevel": "off",
+    "gitlens.telemetry.enabled": false,
+    "window.autoDetectColorScheme": true,
 }
