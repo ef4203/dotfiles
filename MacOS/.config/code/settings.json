@@ -13,14 +13,9 @@
     "editor.suggestSelection": "first",
     "editor.quickSuggestionsDelay": 0,
     "explorer.confirmDelete": false,
+    "explorer.excludeGitIgnore": true,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    "files.exclude": {
-        "**/*.csproj.user": true,
-        "**/bin": true,
-        "**/node_modules": true,
-        "**/obj": true
-    },
     "search.exclude": {
         "**/node_modules": true,
         "**/bower_components": true,
@@ -33,6 +28,13 @@
         "**/obj": true,
         "**/.vs": true
     },
+    "window.autoDetectColorScheme": true,
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Default Light+",
+    "workbench.iconTheme": "vscode-icons",
+    "telemetry.telemetryLevel": "off",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "security.workspace.trust.untrustedFiles": "open",
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": false,
     "vim.handleKeys": {},
@@ -46,9 +48,5 @@
             ]
         }
     ],
-    "security.workspace.trust.untrustedFiles": "open",
-    "workbench.startupEditor": "none",
-    "telemetry.telemetryLevel": "off",
     "gitlens.telemetry.enabled": false,
-    "window.autoDetectColorScheme": true,
 }
