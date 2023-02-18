@@ -7,7 +7,18 @@ Side effects may include sudden vim keybinds, cryptic shorthands and overwritten
 
 # Installation
 
-## Windows
+## MacOS
+Clone the repository, then navigate with the terminal to the folder and execute the following commands:
+
+```sh
+cd MacOs
+./install.sh
+```
+
+The script will create symlinks, so if you fork the repository you can keep your configuration up to date 
+and synced across multiple computers.
+
+## Windows (DEPRICATED)
 
 Copy the entire command into an elevated powershell.
 
@@ -15,7 +26,7 @@ Copy the entire command into an elevated powershell.
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ef4203/dotfiles/master/Windows/install.ps1'))
 ```
 
-## Linux
+## Linux (DEPRICATED)
 
 ```sh
 cd Linux
