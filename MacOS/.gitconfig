@@ -3,14 +3,16 @@
 	email = xxxx@example.com
 	signingkey = XXXXXX
 [filter "lfs"]
-        required = true
-        clean = git-lfs clean -- %f
-        smudge = git-lfs smudge -- %f
-        process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
 [commit]
 	gpgsign = true
 [remote "origin"]
 	prune = true
+[push]
+	autoSetupRemote = true
 [alias]
 	st = status
 	co = checkout
