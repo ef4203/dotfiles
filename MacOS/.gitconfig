@@ -1,5 +1,5 @@
 [user]
-	name = User
+    name = User
 	email = xxxx@example.com
 	signingkey = XXXXXX
 [filter "lfs"]
@@ -14,11 +14,14 @@
 [push]
 	autoSetupRemote = true
 [alias]
-	st = status
+    st = status
 	co = checkout
 	df = diff -w
-	lg = log -p
-	p = push -v
+    l = log --abbrev-commit --decorate  --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ai) %C(white) %s - %C(bold blue)%an %C(reset)%C(bold yellow)%d%C(reset)'
+    ll = l
+    lg = l
+    ld = log -p
+ 	p = push -v
 	c = commit -v -n -m
 	cm = commit -a -v -n
 	conflict = diff --name-only --diff-filter=U
