@@ -48,5 +48,5 @@
         }
     ],
     "gitlens.telemetry.enabled": false,
-    "workbench.colorTheme": "Default Light+"
+    "workbench.colorTheme": "Default Light Modern"
 }
