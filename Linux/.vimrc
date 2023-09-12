@@ -1,44 +1,3 @@
-" Vundle stuff
-set nocompatible              
-filetype off                 
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Load plugin manager
-Plugin 'VundleVim/Vundle.vim'
-
-" Automatically close brackets
-Plugin 'jiangmiao/auto-pairs'
-
-" Editorconfig
-Plugin 'editorconfig/editorconfig-vim'
-
-" Allow plugins to define their own operator
-Plugin 'kana/vim-operator-user'
-
-" clang-format plugin
-Plugin 'rhysd/vim-clang-format'
-
-" Color theme (Use the original for gvim on windows)
-Plugin 'ef4203/vim-code-dark'
-
-" Fuzzy finder
-Plugin 'ctrlpvim/ctrlp.vim'
-
-" File tree
-Plugin 'scrooloose/nerdtree'
-
-" Auto completer
-" Plugin 'Valloric/YouCompleteMe'
-
-" Code formater
-Plugin 'prettier/vim-prettier'
-
-call vundle#end()
-
-" Keep in mind to adjust this on DOS, e.g. change / to \\
-
 " Ignore JS/TS/Web Stack Files
 set wildignore+=*/node_modules/*
 
@@ -90,16 +49,15 @@ set mouse=a
 set numberwidth=6
 set encoding=utf-8
 
-" Set the colorscheme
-colorscheme codedark
-set cursorline
+" Set the colorscheme and cursorline
+" colorscheme ron
+" set cursorline
 
 " Access the system clipboard
-" (On DOS, it's 'unnamed' without plus)
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Enable relative line numbering
-set rnu
+" set rnu
 
 " Store an undo buffer in a file in $HOME/.vimundo
 set undofile
@@ -119,7 +77,7 @@ noremap <F1> <nop>
 " Unbind another help menu
 noremap <S-k> <nop>
 
-" remove delay when pressing O
+" Remove delay when pressing O
 set timeout ttimeoutlen=100
 
 " Easier split navigation
@@ -128,32 +86,22 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Map F6 to spellchecking
-map <F6> :setlocal spell! spelllang=en_us<CR>
-
 " (HARD MODE)
+" Comment this out if you are new to vim
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
 " (GOD MODE)
+" Comment this out if you are new to vim
 inoremap <Up> <nop>
 inoremap <Down> <nop>
 inoremap <Left> <nop>
 inoremap <Right> <nop>
 
-" Enable autoformat on save
-autocmd FileType c,cpp,javascript ClangFormatAutoEnable
-
-" Map prettier
-noremap <C-f> :Prettier
-
 " Enable Syntax highlighting for typescript, no plugin required
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
-
-" Open file tree
-map <C-n> :NERDTreeToggle<CR>
 
 " Disable Terminal bell
 set noerrorbells visualbell t_vb=
