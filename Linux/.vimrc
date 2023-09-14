@@ -54,7 +54,7 @@ set encoding=utf-8
 " set cursorline
 
 " Access the system clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Enable relative line numbering
 " set rnu
