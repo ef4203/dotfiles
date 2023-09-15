@@ -5,7 +5,6 @@ make_home_symlink() {
 }
 
 dotfiles=(
-   .Xdefaults
    .vimrc
    .config/fish
 )
