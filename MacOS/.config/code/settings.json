@@ -1,7 +1,6 @@
 {
     "breadcrumbs.enabled": false,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
     "editor.dragAndDrop": false,
     "editor.renderWhitespace": "boundary",
     "editor.folding": false,
@@ -12,6 +11,7 @@
     "editor.formatOnType": true,
     "editor.suggestSelection": "first",
     "editor.quickSuggestionsDelay": 0,
+    "editor.fontSize": 14,
     "explorer.confirmDelete": false,
     "explorer.excludeGitIgnore": true,
     "files.insertFinalNewline": true,
@@ -31,6 +31,7 @@
     "window.autoDetectColorScheme": true,
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Default Light Modern",
     "telemetry.telemetryLevel": "off",
     "diffEditor.ignoreTrimWhitespace": false,
     "security.workspace.trust.untrustedFiles": "open",
@@ -48,5 +49,8 @@
         }
     ],
     "gitlens.telemetry.enabled": false,
-    "workbench.colorTheme": "Default Light Modern"
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.remotePlatform": {
+        "192.168.178.49": "linux"
+    }
 }
