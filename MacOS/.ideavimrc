@@ -15,3 +15,5 @@ nnoremap <C-H> <C-W><C-H>
 
 " Ctrl Backspace delete last word
 imap <C-BS> <C-W>
+
+map <Space> <Action>(ShowIntentionActions)

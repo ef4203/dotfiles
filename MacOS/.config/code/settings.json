@@ -1,7 +1,8 @@
 {
-    "breadcrumbs.enabled": false,
     "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
     "editor.dragAndDrop": false,
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
     "editor.renderWhitespace": "boundary",
     "editor.folding": false,
     "editor.codeLens": false,
@@ -12,10 +13,18 @@
     "editor.suggestSelection": "first",
     "editor.quickSuggestionsDelay": 0,
     "editor.fontSize": 14,
+    "editor.rulers": [
+        80
+    ],
     "explorer.confirmDelete": false,
     "explorer.excludeGitIgnore": true,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.associations": {
+        "**/pipelines/**/*.yml": "azure-pipelines",
+        "pipeline*.yml": "azure-pipelines"
+    },
     "search.exclude": {
         "**/node_modules": true,
         "**/bower_components": true,
@@ -29,12 +38,17 @@
         "**/.vs": true
     },
     "window.autoDetectColorScheme": true,
+    "window.density.editorTabHeight": "compact",
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Default Light Modern",
+    "workbench.tips.enabled": false,
+    "workbench.tree.indent": 10,
+    "workbench.tree.renderIndentGuides": "none",
     "telemetry.telemetryLevel": "off",
     "diffEditor.ignoreTrimWhitespace": false,
     "security.workspace.trust.untrustedFiles": "open",
+    "breadcrumbs.enabled": false,
+    "vim.camelCaseMotion.enable": true,
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": false,
     "vim.handleKeys": {},
@@ -48,9 +62,9 @@
             ]
         }
     ],
-    "gitlens.telemetry.enabled": false,
     "remote.SSH.useLocalServer": false,
     "remote.SSH.remotePlatform": {
         "192.168.178.49": "linux"
-    }
+    },
+    "hediet.vscode-drawio.theme": "atlas",
 }
