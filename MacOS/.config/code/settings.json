@@ -1,6 +1,4 @@
 {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
     "editor.dragAndDrop": false,
     "editor.formatOnSaveMode": "modificationsIfAvailable",
     "editor.renderWhitespace": "boundary",
@@ -9,7 +7,6 @@
     "editor.minimap.enabled": false,
     "editor.colorDecorators": false,
     "editor.hover.delay": 200,
-    "editor.formatOnType": true,
     "editor.suggestSelection": "first",
     "editor.quickSuggestionsDelay": 0,
     "editor.fontSize": 14,
@@ -17,10 +14,8 @@
         80
     ],
     "explorer.confirmDelete": false,
-    "explorer.excludeGitIgnore": true,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    "files.encoding": "utf8bom",
     "files.associations": {
         "**/pipelines/**/*.yml": "azure-pipelines",
         "pipeline*.yml": "azure-pipelines"
@@ -37,7 +32,6 @@
         "**/obj": true,
         "**/.vs": true
     },
-    "window.autoDetectColorScheme": true,
     "window.density.editorTabHeight": "compact",
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "vscode-icons",
@@ -47,7 +41,6 @@
     "telemetry.telemetryLevel": "off",
     "diffEditor.ignoreTrimWhitespace": false,
     "security.workspace.trust.untrustedFiles": "open",
-    "breadcrumbs.enabled": false,
     "vim.camelCaseMotion.enable": true,
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": false,
@@ -67,4 +60,16 @@
         "192.168.178.49": "linux"
     },
     "hediet.vscode-drawio.theme": "atlas",
+    "explorer.excludeGitIgnore": true,
+    "window.autoDetectColorScheme": true,
+    "files.encoding": "utf8",
+    "[nix]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "files.encoding": "utf8"
+    },
+    "[csharp]": {
+        "files.encoding": "utf8bom"
+    },
+    "haskell.manageHLS": "PATH"
 }

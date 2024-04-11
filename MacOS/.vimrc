@@ -23,7 +23,7 @@ set noswapfile
 set number
 
 " Disable line wrapping
-" set nowrap
+set nowrap
 
 " Make backspace behave like in other editors
 set backspace=indent,eol,start
@@ -50,8 +50,8 @@ set numberwidth=6
 set encoding=utf-8
 
 " Set the colorscheme and cursorline
-" colorscheme ron
-" set cursorline
+colorscheme codedark
+set cursorline
 
 " Access the system clipboard
 set clipboard=unnamed
@@ -103,9 +103,25 @@ inoremap <Right> <nop>
 " Enable Syntax highlighting for typescript, no plugin required
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
 
+" Enable syntax highlighting for .NET's Build props
+autocmd BufNewFile,BufRead *.props set syntax=xml
+
 " Disable Terminal bell
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
+" Disable Scrollbar
+set guioptions=Ace 
+
+" Set Font and Font Size
+set guifont=HackNFM-Regular:h14
+
 " Ctrl Backspace delete last word
 imap <C-BS> <C-W>
+
+" Toggle fileexplorer
+nnoremap <C-t> :NERDTreeToggle<CR>
+
+" Toggle fuzzy finder
+nnoremap <C-f> :CtrlP<CR>
+
