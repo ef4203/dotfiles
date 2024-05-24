@@ -120,8 +120,10 @@ set guifont=HackNFM-Regular:h14
 imap <C-BS> <C-W>
 
 " Toggle fileexplorer
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-b> :NERDTreeToggle<CR>
 
 " Toggle fuzzy finder
 nnoremap <C-f> :CtrlP<CR>
+
+nnoremap <C-t> :term
 

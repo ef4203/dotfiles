@@ -71,5 +71,7 @@
     "[csharp]": {
         "files.encoding": "utf8bom"
     },
-    "haskell.manageHLS": "PATH"
+    "haskell.manageHLS": "PATH",
+    "cmake.showOptionsMovedNotification": false,
+    "workbench.colorTheme": "Default Light Modern"
 }
