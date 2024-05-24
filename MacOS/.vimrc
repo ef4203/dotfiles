@@ -125,5 +125,6 @@ nnoremap <C-b> :NERDTreeToggle<CR>
 " Toggle fuzzy finder
 nnoremap <C-f> :CtrlP<CR>
 
-nnoremap <C-t> :term
+" Map terminal
+nnoremap <C-t> :term<CR>
 
