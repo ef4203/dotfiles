@@ -73,5 +73,6 @@
     },
     "haskell.manageHLS": "PATH",
     "cmake.showOptionsMovedNotification": false,
-    "workbench.colorTheme": "Default Light Modern"
+    "workbench.colorTheme": "Default Light Modern",
+    "github.copilot.editor.enableAutoCompletions": true
 }
