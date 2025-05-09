@@ -50,7 +50,7 @@ set numberwidth=6
 set encoding=utf-8
 
 " Set the colorscheme and cursorline
-colorscheme codedark
+colorscheme morning
 set cursorline
 
 " Access the system clipboard
@@ -119,7 +119,10 @@ set guifont=HackNFM-Regular:h14
 " Ctrl Backspace delete last word
 imap <C-BS> <C-W>
 
-" Toggle fileexplorer
+" Show hiddeen files in the file explorer
+let NERDTreeShowHidden=1
+
+" Toggle file explorer
 nnoremap <C-b> :NERDTreeToggle<CR>
 
 " Toggle fuzzy finder

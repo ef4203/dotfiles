@@ -55,24 +55,12 @@
             ]
         }
     ],
-    "remote.SSH.useLocalServer": false,
-    "remote.SSH.remotePlatform": {
-        "192.168.178.49": "linux"
-    },
-    "hediet.vscode-drawio.theme": "atlas",
-    "explorer.excludeGitIgnore": true,
     "window.autoDetectColorScheme": true,
     "files.encoding": "utf8",
-    "[nix]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-        "files.encoding": "utf8"
-    },
     "[csharp]": {
         "files.encoding": "utf8bom"
     },
-    "haskell.manageHLS": "PATH",
-    "cmake.showOptionsMovedNotification": false,
     "workbench.colorTheme": "Default Light Modern",
-    "github.copilot.editor.enableAutoCompletions": true
+    "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.chat.codesearch.enabled": true
 }
